@@ -1,0 +1,5 @@
+# ninja log v5
+0	289	1651857507589040240	CMakeFiles/OS-Proj-4.dir/PTE.cpp.o	be4faa215cc5277f
+0	377	1651857507677037595	CMakeFiles/OS-Proj-4.dir/ThreadCreation.cpp.o	2d5094d729c123d7
+0	523	1651857507821033269	CMakeFiles/OS-Proj-4.dir/main.cpp.o	602b3cac296258fb
+523	588	1651857507885031345	OS-Proj-4	8c90e5594cb6efdc
