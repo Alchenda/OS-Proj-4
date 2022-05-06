@@ -23,6 +23,10 @@ typedef struct {
 } threadID;
 list<int> readyFrameList;
 int main(int argc, char * argv[]) {
+    //Dynamically allocation
+    unsigned char * physicalMemory;
+    
+    //Variable initialization
     char *x = argv[1]; //input file
     char *y = argv[2]; //output file
     char *z = argv[3]; //seed for random number generation
@@ -49,6 +53,14 @@ int main(int argc, char * argv[]) {
     mainMemSize = stoi(threadFiles.at(0));
     pageSize = stoi(threadFiles.at(1));
     numThreads = stoi(threadFiles.at(2));
+    //Establish size of main memory array
+    physicalMemory = new unsigned char [mainMemSize];
+    //now that the size of the physical memory array has been established, this needs to be filled with random values
+    srand(seed);
+    hex_string(physicalMemory, mainMemSize);
+    //std::cout << std::hex << (int)physicalMemory[i] << " "; convert to hex
+    cout << "Testing physical memory fill" << endl;
+    
     //Establish free frame list and list size
     freeFrameSize = mainMemSize / pageSize; //number of frames that are in physical memory
     for (int i = 0; i < freeFrameSize; ++i) {
@@ -63,7 +75,6 @@ int main(int argc, char * argv[]) {
         pthread_mutex_unlock(&lock1);
         pthread_create(&newThread, nullptr, CreateThread, &threadFiles.at(i));
     }
-    
     inFiles.close();
     
     
