@@ -35,3 +35,37 @@ string PTE::GetVA(){
 void PTE::PrintReg(){
     cout << regNum << endl;
 }
+void PTE::FreeFrame(){
+ // print frame number to file if frame is available
+ /*
+  * if (pageNumber.isFull == true) {
+  *  cout << "Using free frame" << endl;
+  * }
+  *
+  *
+  */
+}
+
+void PTE::Evict(){
+    // print thread and page if page is being evicted
+    /*
+     * if (pageNumber.isEvicted == true){
+     * // cout << "evicting process" << endl;
+     * }
+     *
+     */
+}
+
+void PTE::Translation() {
+    /*
+     *
+     * // determine if translation is valid
+     *
+     *
+     * // handle translations from page to frame
+     *
+     *
+     * // translating virtual address to physical address
+     *
+     */
+}

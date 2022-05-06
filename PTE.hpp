@@ -31,6 +31,11 @@ private:
     int referenceBit;
     int validBit;
     int FrameNumber;
-    
+
+    void FreeFrame();
+
+    void Evict();
+
+    void Translation();
 };
 #endif /* PTE_hpp */
