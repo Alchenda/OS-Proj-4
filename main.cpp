@@ -76,7 +76,9 @@ int main(int argc, char * argv[]) {
         pthread_create(&newThread, nullptr, CreateThread, &threadFiles.at(i));
     }
     inFiles.close();
-    
+
+
+    pthread_exit(nullptr);
     
     return 0;
 }

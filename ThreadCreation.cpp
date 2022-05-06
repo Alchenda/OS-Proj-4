@@ -14,6 +14,13 @@
 using namespace std;
 extern int const pageSize;
 extern pthread_mutex_t lock1;
+
+void ProcessRegisters(vector<PTE> pages){
+    for (int i = 0; i < pages.size(); ++i) {
+        cout << "PX Operation " << pages.at(i).GetCommand() << " " << pages.at(i).GetRegister() << " " << pages.at(i).GetVA() << endl;
+    }
+}
+
 void* CreateThread(void * arg){
     string threadFileName = *(string*)arg;//type casting the void pointer
     fstream fileForThread;
@@ -51,11 +58,7 @@ void* CreateThread(void * arg){
     ProcessRegisters(pageTable);
     return nullptr;
 }
-void ProcessRegisters(vector<PTE> pages){
-    for (int i = 0; i < pages.size(); ++i) {
-        cout << "PX Operation " << pages.at(i).GetCommand() << " " << pages.at(i).GetRegister() << " " << pages.at(i).GetVA() << endl;
-    }
-}
+
 void hex_string(unsigned char str[], int length)
 {
   int i;
