@@ -31,7 +31,8 @@ private:
     int referenceBit;
     int validBit;
     int FrameNumber;
-
+    bool isFull;
+    bool isEvicted;
     void FreeFrame();
 
     void Evict();
