@@ -48,6 +48,21 @@ void* CreateThread(void * arg){
     offset = log2(pageSize);
     bitsForPageNum = 32 - offset;
     pageTableSize = virtualMemSize / pageSize;
-    //creating the page table for the process
+    ProcessRegisters(pageTable);
     return nullptr;
+}
+void ProcessRegisters(vector<PTE> pages){
+    for (int i = 0; i < pages.size(); ++i) {
+        cout << "PX Operation " << pages.at(i).GetCommand() << " " << pages.at(i).GetRegister() << " " << pages.at(i).GetVA() << endl;
+    }
+}
+void hex_string(unsigned char str[], int length)
+{
+  int i;
+    //srand(1);
+  for(i=0;i<length;i++)
+  {
+      str[i]= rand() % 256;
+  }
+  str[length]=0;
 }
