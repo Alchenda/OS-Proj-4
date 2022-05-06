@@ -10,5 +10,8 @@
 
 #include <stdio.h>
 #include <string>
+#include "PTE.hpp"
 void* CreateThread(void * arg);
+void hex_string(unsigned char str[], int length);
+void ProcessRegisters(vector<PTE> pages);
 #endif /* ThreadCreation_hpp */
