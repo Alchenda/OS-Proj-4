@@ -18,7 +18,9 @@ public:
     int GetValidBit();
     int GetReferenceBit();
     int GetPageNumber();
-    void PrintVA();
+    string GetCommand();
+    string GetRegister();
+    string GetVA();
     void PrintReg();
     void IntToHex(int convert);
 private:
@@ -28,6 +30,7 @@ private:
     int pageNumber;
     int referenceBit;
     int validBit;
+    int FrameNumber;
     
 };
 #endif /* PTE_hpp */
